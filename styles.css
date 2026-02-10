@@ -21,7 +21,7 @@
     --color-accent-border: rgba(255, 107, 107, 0.2);
     --color-accent-bg: rgba(255, 107, 107, 0.1);
     --color-terminal-bg: rgba(20, 20, 20, 0.8);
-    --color-header-bg: rgba(10, 10, 10, 0.8);
+    --color-header-bg: rgba(0, 0, 0, 0.9);
 
     /* Spacing */
     --space-xs: 0.5rem;
@@ -77,25 +77,6 @@ body {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--container-padding);
-}
-
-/* Skip link for keyboard/screen reader users */
-.skip-link {
-    position: absolute;
-    top: -100%;
-    left: var(--space-md);
-    z-index: 100;
-    padding: var(--space-sm) var(--space-md);
-    background: var(--color-accent);
-    color: white;
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: var(--radius-sm);
-    transition: top var(--transition-fast);
-}
-
-.skip-link:focus {
-    top: var(--space-md);
 }
 
 /* ==========================================================================
@@ -216,6 +197,14 @@ body {
     filter: blur(60px);
 }
 
+.hero-background::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
 .hero-content {
     position: relative;
     z-index: 10;
@@ -278,7 +267,7 @@ body {
    ========================================================================== */
 
 .terminal-container {
-    margin-top: var(--space-3xl);
+    margin-top: var(--space-md);
     transform: translateY(160px);
 }
 
